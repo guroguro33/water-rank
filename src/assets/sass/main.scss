@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+// ==================================
+// base
+// ==================================
+html, body {
+  width: 100%;
+  background-color: $color_bg;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  color: $font-color_default;
+  font-size: $font-size_default;
+  font-family: $font-family_main;
+  text-size-adjust: 100%;
+}
+
+p, a {
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  display: block;
+  color: $font-color_default;
+  text-decoration: none;
+  transition: .3s;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+input{
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.footer br{
+  display: none;
+}
+// ==================================
+// body
+// ==================================
+.main{
+  width: 450px;
+  height: 100%;
+  margin: 50px auto 30px;
+  background-image: url(../water.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include mq(){
+    width: calc(100% - 30px);
+    margin: 50px 15px 30px;
+  }
+}
+.title{
+  margin-bottom: $space_m;
+  font-size: $font-size_xl;
+  font-weight: 700;
+  &-sub{
+    margin-bottom: $space_xxl;
+    font-size: $font-size_l;
+    font-weight: 700;
+  }
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $space_3l;
+  min-height: 450px;
+  background-color: #F0F3F5;
+  border-radius: 10px;
+  opacity: .95;
+  @include mq(){
+    margin-bottom: $space_l;
+  }
+}
+// ==================================
+// select
+// ==================================
+.question{
+  margin-bottom: $space_3l;
+  font-weight: 700;
+}
+.list{
+  display: block;
+  margin-bottom: $space_3l;
+  padding-left: 20px;
+  width: 280px;
+  height: 50px;
+  font-family: inherit;
+  font-weight: 700;
+}
+.btn{
+  display: block;
+  width: 150px;
+  height: 50px;
+  background-color: #004BB1;
+  border-radius: 20px;
+  border: none;
+  font-size: inherit;
+  color: $color_w;
+  cursor: pointer;
+  transition: all .3s ease;
+  &:hover{
+    transform: scale(1.05);
+  }
+  &:active{
+    opacity: .7;
+  }
+}
+.back{
+  font-weight: 600;
+}
+// ==================================
+// result
+// ==================================
+.result{
+  padding: $space_xxl 0 ;
+  justify-content: start;
+}
+.bold{
+  font-weight: 700;
+}
+.rank{
+  margin-bottom: $space_xl;
+  line-height: 2;
+}
+.msg{
+  margin-bottom: $space_xl;
+  width: 80%;
+  line-height: inherit;
+  text-align: left;
+  word-wrap: break-word;
+}
+.line{
+  background:linear-gradient(transparent 70%, #FFFF00 0%);
+}
+// ==================================
+// result
+// ==================================
+.footer{
+  @include mq(){
+    font-size: $font-size_s;
+  }
+}
+
