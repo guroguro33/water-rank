@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta name="description" content="水道料金全国ランキングを簡単に確認できるサイトです">
+    <link rel="apple-touch-icon" type="image/png" href="<%= BASE_URL %>apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="<%= BASE_URL %>icon-192x192.png">
+
+    <!-- Twitterカード -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@guroguro33" />
+    <meta property="og:url" content="https://kurosuke-web.com/" />
+    <meta property="og:title" content="kurosukeのポートフォリオ" />
+    <meta property="og:description" content="プロフィール、スキル、制作実績など掲載" />
+    <meta property="og:image" content="https://kurosuke-web.com/twitter-card.jpg" />
+    <!-- googleフォント -->
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body>
+  <body ontouchstart="">
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+
+    <main class="main">
+      <h1 class="title">全国水道料金ランキング</h1>
+      <h2 class="title-sub
+      ">あなたの町は高い？安い？</h2>
+  
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    </main>
+
+    
+    <footer class="footer">
+      <p>© Copyright | Kurosuke All Right Reserved</p>
+    </footer>
   </body>
 </html>

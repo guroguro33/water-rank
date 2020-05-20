@@ -1,0 +1,52 @@
+<template>
+  <div class="pref">
+    <section class="content">
+      <p class="question">市町村等を選択</p>
+      <select class="list pref" v-model="selectTown">
+        <option value="">選択してください</option>
+        <option :value="list.id" v-for="list in townList" :key="list.id">{{ list.org_name }}</option>
+      </select>
+
+      <btn name="結果へ" className="btn" to="Result" :townId="selectTown" :isDisabled="(selectTown)? false : true"></btn>
+    </section>
+
+        <btn name="&lt; もどる" className="btn back" to="Pref"></btn>
+
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import btn from '@/components/btn.vue'
+
+export default {
+  name: 'Town',
+  components: {
+    btn
+  },
+  data() {
+    return {
+      prefId: this.$route.params.pid,
+      townList: [],
+      selectTown: '',
+    }
+  },
+  mounted: function() {
+    // console.log(this.prefId);
+    let that = this;
+    this.axios.get('http://127.0.0.1/water-rank-ajax/getTown.php', {
+      params: {
+        prefId: this.prefId,
+      }
+    })
+    .then( function(response) {
+      console.log('ajax-success');
+      that.townList = response.data;
+      console.log(that.townList);
+    })
+    .catch(function (error) {
+    console.log(error);
+    })
+  },
+}
+</script>
