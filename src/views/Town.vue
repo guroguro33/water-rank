@@ -10,13 +10,11 @@
       <btn name="結果へ" className="btn" to="Result" :townId="selectTown" :isDisabled="(selectTown)? false : true"></btn>
     </section>
 
-        <btn name="&lt; もどる" className="btn back" to="Pref"></btn>
-
+    <btn name="&lt; もどる" className="btn back" to="Pref"></btn>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import btn from '@/components/btn.vue'
 
 export default {
@@ -32,20 +30,17 @@ export default {
     }
   },
   mounted: function() {
-    // console.log(this.prefId);
     let that = this;
-    this.axios.get('http://127.0.0.1/water-rank-ajax/getTown.php', {
+    this.axios.get('http://127.0.0.1/water-rank/php/getTown.php', {
       params: {
         prefId: this.prefId,
       }
     })
     .then( function(response) {
-      console.log('ajax-success');
       that.townList = response.data;
-      console.log(that.townList);
     })
     .catch(function (error) {
-    console.log(error);
+      console.log(error);
     })
   },
 }

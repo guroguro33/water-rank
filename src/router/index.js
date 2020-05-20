@@ -19,7 +19,7 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/Pref.vue')
   },
   {
-    path: '/town/:pid',
+    path: '/town/:pid?',
     name: 'Town',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

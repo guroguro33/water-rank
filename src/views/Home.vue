@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <section class="content">
-
     </section>
 
     <btn name="さっそく調べる" className="btn" to="Pref"></btn>
@@ -9,7 +8,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import btn from '@/components/btn.vue'
 
 export default {
@@ -20,7 +18,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .content{
   background: none;

@@ -154,6 +154,7 @@ input{
 // footer
 // ==================================
 .footer{
+  height: 30px;
   @include mq(){
     font-size: $font-size_s;
   }

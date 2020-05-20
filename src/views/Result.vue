@@ -2,7 +2,7 @@
   <div class="pref">
     <section class="content result">
       <p class="rank">
-        あなたの住んでいる<br>
+        あなたに水を送っている<br>
         <span class="bold f-l">{{ resultData.org_name }}</span>の<br>
         全国水道料金ランキング(安さ)は<br>
         <span class="bold f-l">第{{ resultData.national_rank }}位</span>／1263団体です！
@@ -23,12 +23,16 @@
       
       <p class="msg">
         料金の値上げは避けられません。<br>
-        <span class="line">しかし３０％上がったとしても、家庭のスマホ月額料金より安いと思いませんか？</span>
+        <span class="line">しかし仮に３０％上がったとしても、家庭のスマホ月額料金より安いと思いませんか？</span>
       </p>
 
       <p class="msg">
         自分の町の未来の水道について、<br>
         少しでも考えてもらえたら幸いです。
+      </p>
+
+      <p class="msg f-sm">
+        ※順位・料金などは2016年度データ
       </p>
 
       <p class="msg f-sm">
@@ -44,7 +48,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import btn from '@/components/btn.vue'
 
 export default {
@@ -59,17 +62,14 @@ export default {
     }
   },
   mounted: function() {
-    // console.log(this.townId);
     let that = this;
-    this.axios.get('http://127.0.0.1/water-rank-ajax/getResult.php', {
+    this.axios.get('http://127.0.0.1/water-rank/php/getResult.php', {
       params: {
         townId: this.townId,
       }
     })
     .then(function(response){
-      console.log('ajax-success');
       that.resultData = response.data;
-      console.log(response.data);
     }) 
     .catch(function(error){
       console.log(error);

@@ -11,12 +11,10 @@
     </section>
 
     <btn name="&lt; もどる" className="btn back" to="Home"></btn>
-
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import btn from '@/components/btn.vue'
 
 export default {
@@ -32,13 +30,12 @@ export default {
   },
   mounted: function() {
     let that = this;
-    this.axios.get('http://127.0.0.1/water-rank-ajax/getPref.php')
+    this.axios.get('http://127.0.0.1//water-rank/php/getPref.php')
     .then( function(response) {
-      console.log('ajax-success');
       that.prefList = response.data;
     })
     .catch(function (error) {
-    console.log(error);
+      console.log(error);
     })
   },
 }
