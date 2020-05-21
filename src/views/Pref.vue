@@ -30,7 +30,7 @@ export default {
   },
   mounted: function() {
     let that = this;
-    this.axios.get('http://127.0.0.1//water-rank/php/getPref.php')
+    this.axios.get('https://kurosuke-web.com/water-rank/getPref.php')
     .then( function(response) {
       that.prefList = response.data;
     })

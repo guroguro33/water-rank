@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Btn',
+  name: 'btn',
   props: {
     name: String,
     to: String,

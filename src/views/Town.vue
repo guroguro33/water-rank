@@ -31,7 +31,7 @@ export default {
   },
   mounted: function() {
     let that = this;
-    this.axios.get('http://127.0.0.1/water-rank/php/getTown.php', {
+    this.axios.get('https://kurosuke-web.com/water-rank/getTown.php', {
       params: {
         prefId: this.prefId,
       }

@@ -63,7 +63,7 @@ export default {
   },
   mounted: function() {
     let that = this;
-    this.axios.get('http://127.0.0.1/water-rank/php/getResult.php', {
+    this.axios.get('https://kurosuke-web.com/water-rank/getResult.php', {
       params: {
         townId: this.townId,
       }

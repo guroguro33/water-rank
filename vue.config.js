@@ -1,7 +1,7 @@
 module.exports = {
   pages: {
     index: {
-      entry: 'src/main.js',
+      entry: './src/main.js',
       title: '全国水道料金ランキング',
     }
   },
@@ -11,5 +11,6 @@ module.exports = {
         prependData: '@import "./src/assets/sass/prepends.scss";'
       }
     }
-  }
+  },
+  publicPath: '/water-rank/'
 };

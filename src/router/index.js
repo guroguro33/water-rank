@@ -16,7 +16,7 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Pref.vue')
+    component: () => import(/* webpackChunkName: "pref" */ '../views/Pref.vue')
   },
   {
     path: '/town/:pid?',
@@ -24,7 +24,7 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Town.vue')
+    component: () => import(/* webpackChunkName: "town" */ '../views/Town.vue')
   },
   {
     path: '/result/:pid?',
@@ -32,13 +32,18 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Result.vue')
+    component: () => import(/* webpackChunkName: "result" */ '../views/Result.vue')
   },
+  {
+    path: '*',
+    redirect: '/'
+  }
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: '/water-rank/',
+  // base: process.env.BASE_URL,
   routes
 })
 
