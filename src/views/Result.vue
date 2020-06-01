@@ -2,41 +2,36 @@
   <div class="pref">
     <section class="content result">
       <p class="rank">
-        あなたに水を送っている
-        <br />
-        <span class="bold f-l">{{ resultData.org_name }}</span
-        >の <br />全国水道料金ランキング(安さ)は
-        <br />
-        <span class="bold f-l">
+        あなたに水を送っている<br />
+        <span class="bold fz-l">{{ resultData.org_name }}</span>
+        の<br />
+        全国水道料金ランキング(安さ)は<br />
+        <span class="bold fz-l scale">
           <animated-number
             :value="valueNational"
             :formatValue="formatToRank"
-            :duration="duration1"
-          /> </span
-        >／1263団体です！
+            :duration="duration"
+            class="scale" />
+        </span>／1263団体です！
       </p>
       <p class="rank">
-        都道府県内では
-        <br />
-        <span class="bold f-l">
+        都道府県内では<br />
+        <span class="bold fz-l">
           <animated-number
             :value="valueGroup"
             :formatValue="formatToRank"
-            :duration="duration2"
-          />
+            :duration="duration"/>
         </span>
         ／{{ resultData.group_count }}団体です！
       </p>
       <p class="rank">
-        月額使用料金(20m
-        <sup>3</sup>使用時)は
-        <br />
-        <span class="bold f-l">
+        月額使用料金(20m<sup>3</sup>使用時)は<br />
+        <span class="bold fz-l">
           <animated-number
             :value="valueFee"
             :formatValue="formatToPrice"
-            :duration="duration3"
-          /> </span
+            :duration="duration"/> 
+          </span
         >です！
       </p>
 
@@ -58,9 +53,9 @@
         <br />少しでも考えてもらえたら幸いです。
       </p>
 
-      <p class="msg f-sm">※順位・料金などは2016年度データ</p>
+      <p class="msg fz-sm">※順位・料金などは2016年度データ</p>
 
-      <p class="msg f-sm">
+      <p class="msg fz-sm">
         出典：週間ダイヤモンド
         <br />
         <a href="https://diamond.jp/articles/-/190843" target="_blank"
@@ -90,9 +85,7 @@ export default {
       valueNational: 0,
       valueGroup: 0,
       valueFee: 0,
-      duration1: 1500,
-      duration2: 2500,
-      duration3: 3500
+      duration: 1500
     };
   },
   methods: {
@@ -134,11 +127,12 @@ export default {
 }
 .bold {
   font-weight: 700;
+  color: #9e0000;
 }
-.f-sm {
+.fz-sm {
   font-size: $font-size-s;
 }
-.f-l {
+.fz-l {
   font-size: $font-size-l;
 }
 .rank {
@@ -154,5 +148,20 @@ export default {
 }
 .line {
   background: linear-gradient(transparent 70%, #ffff00 0%);
+}
+.scale {
+  animation: scale-animation 1.5s ease;
+  display: inline-block;
+}
+@keyframes scale-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
