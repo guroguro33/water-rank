@@ -13,8 +13,7 @@ vue.jsを使用した居住地域を選択すると水道料金の全国順位�
  
 - SPA（vue.jsおよびvue router）
 - vueアニメーション（vue.js）
-- データ取得（axios）
-- データベース（MySQL）
+- DBからのAjaxデータ取得（axios）
 - 開発環境: Vue CLI
 - データベース: MySQL
 - デモページ環境: Xsever
